@@ -2,6 +2,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 type Theme = 'light' | 'dark' | 'system';
 
@@ -37,24 +38,42 @@ export default function ThemeSwitcher() {
   };
 
   return (
-    <div className="flex border rounded p-2 space-x-2 bg-gray-200 dark:bg-gray-800">
+    <div className="flex border rounded-full p-2 space-x-2  ">
       <button
         onClick={() => handleThemeChange('light')}
-        className={`px-3 py-1 rounded ${theme === 'light' ? 'bg-blue-500 text-white' : 'text-gray-600 dark:text-gray-400'}`}
+        className={`rounded-full p-1 ${theme === 'light' ? 'bg-gray-300 text-white' : 'text-gray-600 dark:text-gray-400'}`}
       >
-        Светлая
+        <Image
+          className="dark:invert"
+          src="/sun.svg"
+          alt="Light"
+          width={15}
+          height={15}
+        />
       </button>
       <button
         onClick={() => handleThemeChange('dark')}
-        className={`px-3 py-1 rounded ${theme === 'dark' ? 'bg-blue-500 text-white' : 'text-gray-600 dark:text-gray-400'}`}
+        className={`rounded-full p-1 ${theme === 'dark' ? 'bg-gray-600 text-white' : 'text-gray-600 dark:text-gray-400'}`}
       >
-        Тёмная
+        <Image
+          className="dark:invert"
+          src="/moon.svg"
+          alt="Dark"
+          width={15}
+          height={15}
+        />
       </button>
       <button
         onClick={() => handleThemeChange('system')}
-        className={`px-3 py-1 rounded ${theme === 'system' ? 'bg-blue-500 text-white' : 'text-gray-600 dark:text-gray-400'}`}
+        className={`rounded-full p-1 ${theme === 'system' ? 'bg-gray-500 text-white' : 'text-gray-600 dark:text-gray-400'}`}
       >
-        Системная
+        <Image
+          className="dark:invert"
+          src="/system.svg"
+          alt="System"
+          width={15}
+          height={15}
+        />
       </button>
     </div>
   );
