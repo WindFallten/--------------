@@ -1,16 +1,19 @@
 import Link from 'next/link';
+import Image from "next/image";
 
 export default function Footer() {
     return (
-        <footer>
-            <div>
+        <footer className='flex flex-row gap-5 justify-center items-center py-6'>
                 <p>Сигалев Георгий &copy; {new Date().getFullYear()}</p>
-            </div>
-            <div>
-                <Link href="https://twitter.com/your-username">
-                    Connect on Twitter
+                <Link href="https://t.me/WindFall">
+                    <Image
+                        className="dark:invert"
+                        src="/telegram.svg"
+                        alt="Telegram"
+                        width={30}
+                        height={38}  
+                    />
                 </Link>
-            </div>
         </footer>
     );
 }
