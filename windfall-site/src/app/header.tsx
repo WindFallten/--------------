@@ -1,11 +1,11 @@
 // Import necessary modules
 import Link from 'next/link';
+import ThemeSwitcher from '../components/ThemeSwitcher';
 
 // Define the Header component
 export default function Header() {
     return (
-        <header className="bg-gray-900 text-white py-4 sticky top-0 z-50">
-            <div className="container mx-auto px-4 flex justify-between items-center">
+        <header className="py-4 sticky top-0 z-50 mx-auto px-60 flex justify-between items-center">
                 <h1 className="text-xl font-semibold">WindFall</h1>
                 <nav className="hidden md:block">
                     <ul className="flex gap-x-6">
@@ -36,7 +36,7 @@ export default function Header() {
                         </li>
                     </ul>
                 </nav>
-            </div>
+                <ThemeSwitcher />
         </header>
     );
 }
