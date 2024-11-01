@@ -41,7 +41,7 @@ export default function ThemeSwitcher() {
     <div className="flex border rounded-full p-2 space-x-2  ">
       <button
         onClick={() => handleThemeChange('light')}
-        className={`rounded-full p-1 ${theme === 'light' ? 'bg-gray-300 text-white' : 'text-gray-600 dark:text-gray-400'}`}
+        className={`rounded-full p-1 hover:bg-gray-500 ${theme === 'light' ? 'bg-gray-300 text-white' : 'text-gray-600 dark:text-gray-400'}`}
       >
         <Image
           className="dark:invert"
@@ -53,7 +53,7 @@ export default function ThemeSwitcher() {
       </button>
       <button
         onClick={() => handleThemeChange('dark')}
-        className={`rounded-full p-1 ${theme === 'dark' ? 'bg-gray-600 text-white' : 'text-gray-600 dark:text-gray-400'}`}
+        className={`rounded-full p-1 hover:bg-gray-500 ${theme === 'dark' ? 'bg-gray-600 text-white' : 'text-gray-600 dark:text-gray-400'}`}
       >
         <Image
           className="dark:invert"
@@ -65,7 +65,7 @@ export default function ThemeSwitcher() {
       </button>
       <button
         onClick={() => handleThemeChange('system')}
-        className={`rounded-full p-1 ${theme === 'system' ? 'bg-gray-500 text-white' : 'text-gray-600 dark:text-gray-400'}`}
+        className={`rounded-full p-1 hover:bg-gray-500 ${theme === 'system' ? 'bg-gray-500 text-white' : 'text-gray-600 dark:text-gray-400'}`}
       >
         <Image
           className="dark:invert"
