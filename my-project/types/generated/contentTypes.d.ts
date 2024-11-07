@@ -369,28 +369,109 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
+  collectionName: 'blogs';
+  info: {
+    description: '';
+    displayName: '\u0411\u043B\u043E\u0433';
+    pluralName: 'blogs';
+    singularName: 'blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Content: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Date: Schema.Attribute.Date &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'>;
+    publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPortfolioPortfolio extends Struct.CollectionTypeSchema {
   collectionName: 'portfolios';
   info: {
-    displayName: 'Portfolio';
+    description: '';
+    displayName: '\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E';
     pluralName: 'portfolios';
     singularName: 'portfolio';
   };
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    details: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::portfolio.portfolio'
-    > &
-      Schema.Attribute.Private;
-    Material: Schema.Attribute.RichText;
+    >;
     publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -902,6 +983,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::blog.blog': ApiBlogBlog;
       'api::portfolio.portfolio': ApiPortfolioPortfolio;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
