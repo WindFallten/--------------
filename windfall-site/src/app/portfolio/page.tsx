@@ -1,19 +1,23 @@
 // app/portfolio/page.tsx
-import { fetchAPI } from '../../lib/api';
+import Link from "next/link";
+import { fetchAPI } from "../../lib/api";
 
 export default async function Portfolio() {
-  const data = await fetchAPI("portfolio");
+  const data = await fetchAPI("portfolios");
   const portfolio = data.data;
 
   return (
     <div>
       {portfolio.map((item: any) => (
         <div key={item.id}>
-          <h2>{item.attributes.title}</h2>
-          <p>{item.attributes.description}</p>
-          {/* Добавь минимальную информацию о проекте */}
+          <h2>
+            <Link href={`/portfolio/${item.id}`}>{item.id}</Link>
+          </h2>
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
         </div>
       ))}
     </div>
   );
 }
+
