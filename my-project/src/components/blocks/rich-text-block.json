@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blocks_rich_text_blocks",
+  "info": {
+    "displayName": "rich-text-block",
+    "icon": "code"
+  },
+  "options": {},
+  "attributes": {
+    "info": {
+      "type": "blocks"
+    }
+  }
+}

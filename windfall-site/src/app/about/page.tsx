@@ -7,8 +7,7 @@ export default function About() {
       <div className="flex lg:flex-row items-center sm:flex-col-reverse">
         <div className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
           <h1 className="font-black text-9xl">Сигалев Георгий</h1>
-          {/* - <span className="text-6xl">продуктовый дизайнер</span> */}
-          <p className="text-2xl font-bold ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, corporis modi. Odit incidunt, ipsa rem sit veritatis expedita laudantium voluptatum repudiandae dolorem consequuntur pariatur odio, eveniet unde. Nulla, optio autem!</p>
+          <p className="text-2xl font-bold ">Обо мне</p>
           <div className='flex flex-row gap-5 justify-center items-center'>
             <Link href="https://t.me/WindFall">
               <Image

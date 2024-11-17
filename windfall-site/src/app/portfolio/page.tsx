@@ -9,12 +9,13 @@ export default async function Portfolio() {
   return (
     <div>
       {portfolio.map((item: any) => (
-        <div key={item.id}>
-          <h2>
-            <Link href={`/portfolio/${item.id}`}>{item.id}</Link>
-          </h2>
+        <div key={item.documentId}>
+          <button>
+            <Link href={`/portfolio/${item.title}`}>{item.id}</Link>
+          </button>
           <h3>{item.title}</h3>
           <p>{item.description}</p>
+          <p>{item.md}</p>
         </div>
       ))}
     </div>
