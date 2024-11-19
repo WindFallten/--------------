@@ -1,4 +1,5 @@
-// app/portfolios/[documentId]/page.tsx
+import qs from "qs";
+import Image from "next/image";
 import { fetchAPI } from "../../../lib/api";
 
 export default async function PortfoliosItem({ params }: { params: { documentId: string } }) {
@@ -12,6 +13,14 @@ export default async function PortfoliosItem({ params }: { params: { documentId:
 
   const { title, description, details } = item; // Данные находятся на верхнем уровне
   console.log("Response data:", data);
+
+  // data.search = qs.stringify({
+  //   populate: {
+  //     image: {
+  //       fields: ["alternativeText", "name", "url"],
+  //     },
+  //   },
+  // });
 
   return (
     <div>
