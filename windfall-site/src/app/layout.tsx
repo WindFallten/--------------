@@ -15,11 +15,11 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export async function getStaticProps() {
-  const res = await fetch('http://localhost:8000/api/Next');
-  const posts = await res.json();
-  return { props: { posts } };
-}
+// export async function getStaticProps() {
+//   const res = await fetch('http://localhost:8000/api/Next');
+//   const posts = await res.json();
+//   return { props: { posts } };
+// }
 
 export const metadata: Metadata = {
   title: "Сигалев Георгий",
